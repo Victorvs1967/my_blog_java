@@ -26,9 +26,6 @@ import java.util.UUID;
  * 
  * Please add postgres JDBC driver to classpath before launch this generator
  * 
- * @author devstudy
- * @see http://devstudy.net
- * @version 1.0
  */
 public class TestDBDataGenerator {
 	// Test sentences for content generation
@@ -141,14 +138,14 @@ public class TestDBDataGenerator {
 
 	private static String generateArticleMainImageLink(String theme) throws IOException {
 		String uid = UUID.randomUUID().toString() + ".jpg";
-		String fileName = DEST_MEDIA + "\\" + theme + "\\" + uid;
+		String fileName = DEST_MEDIA + "/" + theme + "/" + uid;
 		downloadImageFromInternet("https://placeimg.com/1000/400/" + theme, fileName);
 		return "/media/" + theme + "/" + uid;
 	}
 
 	private static String generateAccountAvatar() throws IOException {
 		String uid = UUID.randomUUID().toString() + ".jpg";
-		String fileName = DEST_MEDIA + "\\avatar\\" + uid;
+		String fileName = DEST_MEDIA + "/avatar/" + uid;
 		downloadImageFromInternet("https://placeimg.com/80/80/people", fileName);
 		return "/media/avatar/" + uid;
 	}
@@ -157,7 +154,7 @@ public class TestDBDataGenerator {
 		int w = r.nextInt(5) * 100 + 200;
 		int h = r.nextInt(10) * 20 + 100;
 		String uid = UUID.randomUUID().toString() + ".jpg";
-		String fileName = DEST_MEDIA + "\\" + theme + "\\" + uid;
+		String fileName = DEST_MEDIA + "/" + theme + "/" + uid;
 		downloadImageFromInternet("https://placeimg.com/" + w + "/" + h + "/" + theme, fileName);
 		return "<img class=\"float-center\" src=\"/media/" + theme + "/" + uid + "\" alt=\"" + w + "x" + h + "\" /><br/>\n";
 	}
