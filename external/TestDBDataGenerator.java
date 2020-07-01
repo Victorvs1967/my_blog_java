@@ -44,11 +44,11 @@ public class TestDBDataGenerator {
 	// Min article id
 	private static final int START_ARTICLE_ID = 200;
 	// Absolute path to media directory for blog project
-	private static final String DEST_MEDIA = "D:\\devstudy.net\\workspace\\blog\\src\\main\\webapp\\media";
+	private static final String DEST_MEDIA = "src/main/webapp/media";
 	// JDBC setting for blog database
-	private static final String JDBC_URL = "jdbc:postgresql://localhost/blog";
-	private static final String JDBC_USERNAME = "blog";
-	private static final String JDBC_PASSWORD = "password";
+	private static final String JDBC_URL = "jdbc:postgresql://localhost:5432/learning-blog";
+	private static final String JDBC_USERNAME = "victors";
+	private static final String JDBC_PASSWORD = "victor77";
 
 	// Others variables and method are for internal use only
 	/*****************************************************************************************************************************/
@@ -373,7 +373,7 @@ public class TestDBDataGenerator {
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException {
 		init();
 		deleteMediaDir();
 		try (Connection c = DriverManager.getConnection(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD)) {
